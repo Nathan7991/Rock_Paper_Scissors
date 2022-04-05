@@ -41,6 +41,10 @@ userOption = userOption + userOptionAppend;
 
 let computerOption;
 
+let playerPoints;
+
+let computerPoints;
+
 function computerPlay() {
     randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
