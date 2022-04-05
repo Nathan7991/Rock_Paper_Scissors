@@ -66,17 +66,30 @@ function computerPlay() {
 function playRound(userOption, computerOption) {
     if (userOption === "Rock" && computerOption === "Scissors") {
         alert("You win this round!");
+        playerPoints++;
     } else if (userOption === "Paper" && computerOption == "Rock") {
         alert("You win this round!");
+        playerPoints++;
     } else if (userOption === "Scissors" && computerOption === "Paper") {
         alert("You win this round!");
+        playerPoints++;
     } else if (userOption === "Rock" && computerOption === "Paper") {
         alert("You lost! The computer wins this round!");
+        computerPoints++;
     } else if (userOption === "Paper" && computerOption === "Scissors") {
         alert("You lost! The computer wins this round!");
+        computerPoints++;
     } else if (userOption === "Scissors" && computerOption === "Rock") {
         alert ("You lost! The computer wins this round!");
+        computerPoints++;
     } else {
         alert ("Tie!");
+    };
+}
+
+function game(playRound) {
+    for (let i = 0; i < 5; i++) {
+        playRound;
+        return;
     };
 }
