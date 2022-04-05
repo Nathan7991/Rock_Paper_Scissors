@@ -21,7 +21,7 @@ let userOption = window.prompt("Rock, paper, or scissors?");
 /* 
    userOption1's function is for "linting" or preventing any discrepencies in incorrect spelling of any of the options. 
    
-   The goal of 23-27 was to make spelling errors for "rock", "paper" or "scissors" irrelevant.
+   The goal of 36-40 was to make spelling errors for "rock", "paper" or "scissors" irrelevant.
    
    For instance, if a user spells rock like "rOcK", userOption1 will save the characters after the first letter, and make them lowercase.
    Ex.) userOption1 = "ock"
