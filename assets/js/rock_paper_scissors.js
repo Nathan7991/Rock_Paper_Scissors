@@ -39,7 +39,7 @@ userOption = userOption[0].toUpperCase();
 
 userOption = userOption + userOptionAppend;
 
-let computerOption;
+let computerOption = '';
 
 let playerPoints;
 
@@ -48,14 +48,15 @@ let computerPoints;
 function computerPlay() {
     randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
-        let computerOption = "Rock";
+        computerOption = "Rock";
     } else if (randomNumber === 1) {
-        let computerOption = "Paper";
+        computerOption = "Paper";
     } else if (randomNumber === 2) {
-        let computerOption = "Scissors"
+        computerOption = "Scissors"
     } else {
         console.log("Error...");
     }
+    return;
 }
 
 function playRound(userOption, computerSelection) {
