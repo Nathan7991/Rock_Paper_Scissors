@@ -33,9 +33,9 @@ let userOption = window.prompt("Rock, paper, or scissors?");
    Ex.) userOption = "Rock"
 
 */
-let userOption1 = userOption.slice(1, userOption.length).toLowerCase();
+let userOptionAppend = userOption.slice(1, userOption.length).toLowerCase();
 
 userOption = userOption[0].toUpperCase();
 
-userOption = userOption + userOption1;
+userOption = userOption + userOptionAppend;
 
