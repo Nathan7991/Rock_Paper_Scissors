@@ -16,13 +16,7 @@ How will the user give input?
     ▪ “computerPoints”
         • When either the userPoints or computerPoints variable value reaches 3, then the game is over and a winner is chosen.
 */
-
-let userOption;
-
-function move() {
-    userOption = window.prompt("Rock, paper, or scissors?");
-    return;
-}
+let userOption = window.prompt("Rock, paper, or scissors?");
 
 /* 
    userOption1's function is for "linting" or preventing any discrepencies in incorrect spelling of any of the options. 
@@ -45,11 +39,11 @@ userOption = userOption[0].toUpperCase();
 
 userOption = userOption + userOptionAppend;
 
-let computerOption = '';
+let computerOption;
 
-let playerPoints;
+let playerPoints = 0;
 
-let computerPoints;
+let computerPoints = 0;
 
 function computerPlay() {
     randomNumber = Math.floor(Math.random() * 3);
@@ -95,17 +89,17 @@ function playRound(userOption, computerOption) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        move();
         computerPlay();
         playRound(userOption, computerOption);
-        return;
     };
 
-    if (playerPoints > computerPoints) {
-        console.log("The player wins!");
-    } else if (computerPoints > playerPoints) {
-        console.log("The computer wins!");
-    } else {
-        console.log("It's a tie!");
-    };
+    if (computerPoints < playerPoints) {
+        console.log("You won!")
+   } else if (playerPoints < computerPoints) {
+       console.log("You lost!")
+   } else {
+       console.log("It's a tie!")
+   };
+
+   return;
 }
