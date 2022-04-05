@@ -54,4 +54,6 @@ function computerPlay() {
     }
 }
 
-function playRound(player )
+function playRound(userOption, computerSelection) {
+    
+}
