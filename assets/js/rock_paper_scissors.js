@@ -16,7 +16,13 @@ How will the user give input?
     ▪ “computerPoints”
         • When either the userPoints or computerPoints variable value reaches 3, then the game is over and a winner is chosen.
 */
-let userOption = window.prompt("Rock, paper, or scissors?");
+
+let userOption;
+
+function move() {
+    userOption = window.prompt("Rock, paper, or scissors?");
+    return;
+}
 
 /* 
    userOption1's function is for "linting" or preventing any discrepencies in incorrect spelling of any of the options. 
@@ -65,31 +71,41 @@ function computerPlay() {
 
 function playRound(userOption, computerOption) {
     if (userOption === "Rock" && computerOption === "Scissors") {
-        alert("You win this round!");
+        console.log("You win this round!");
         playerPoints++;
     } else if (userOption === "Paper" && computerOption == "Rock") {
-        alert("You win this round!");
+        console.log("You win this round!");
         playerPoints++;
     } else if (userOption === "Scissors" && computerOption === "Paper") {
-        alert("You win this round!");
+        console.log("You win this round!");
         playerPoints++;
     } else if (userOption === "Rock" && computerOption === "Paper") {
-        alert("You lost! The computer wins this round!");
+        console.log("You lost! The computer wins this round!");
         computerPoints++;
     } else if (userOption === "Paper" && computerOption === "Scissors") {
-        alert("You lost! The computer wins this round!");
+        console.log("You lost! The computer wins this round!");
         computerPoints++;
     } else if (userOption === "Scissors" && computerOption === "Rock") {
-        alert ("You lost! The computer wins this round!");
+        console.log("You lost! The computer wins this round!");
         computerPoints++;
     } else {
-        alert ("Tie!");
+        console.log("Tie!");
     };
 }
 
-function game(playRound) {
+function game() {
     for (let i = 0; i < 5; i++) {
-        playRound;
+        move();
+        computerPlay();
+        playRound(userOption, computerOption);
         return;
+    };
+
+    if (playerPoints > computerPoints) {
+        console.log("The player wins!");
+    } else if (computerPoints > playerPoints) {
+        console.log("The computer wins!");
+    } else {
+        console.log("It's a tie!");
     };
 }
