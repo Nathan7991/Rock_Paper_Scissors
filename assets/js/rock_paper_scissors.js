@@ -49,16 +49,34 @@ function computerPlay() {
     randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
         computerOption = "Rock";
+        console.log(computerOption);
     } else if (randomNumber === 1) {
         computerOption = "Paper";
+        console.log(computerOption);
     } else if (randomNumber === 2) {
         computerOption = "Scissors"
+        console.log(computerOption);
     } else {
         console.log("Error...");
+        console.log(computerOption);
     }
     return;
 }
 
-function playRound(userOption, computerSelection) {
-    
+function playRound(userOption, computerOption) {
+    if (userOption === "Rock" && computerOption === "Scissors") {
+        alert("You win this round!");
+    } else if (userOption === "Paper" && computerOption == "Rock") {
+        alert("You win this round!");
+    } else if (userOption === "Scissors" && computerOption === "Paper") {
+        alert("You win this round!");
+    } else if (userOption === "Rock" && computerOption === "Paper") {
+        alert("You lost! The computer wins this round!");
+    } else if (userOption === "Paper" && computerOption === "Scissors") {
+        alert("You lost! The computer wins this round!");
+    } else if (userOption === "Scissors" && computerOption === "Rock") {
+        alert ("You lost! The computer wins this round!");
+    } else {
+        alert ("Tie!");
+    };
 }
