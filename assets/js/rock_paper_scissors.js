@@ -93,7 +93,7 @@ function playRound(userOption, computerOption) {
 }
 /* 
 When called on, this function will iterate 5 times. Each iteration will call upon three functions:
-playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while also correcting any capitalization errors.
+playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while making it case-insensitive.
 computerPlay() will generate a computer choice every time it is executed.
 and playRound() will compare both userOption and computerOption to print to the console who is the winner, and add points to the winner point variable.
 */
