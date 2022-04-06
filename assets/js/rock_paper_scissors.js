@@ -16,12 +16,12 @@ How will the user give input?
     ▪ “computerPoints”
         • When either the userPoints or computerPoints variable value reaches 3, then the game is over and a winner is chosen.
 */
-let userOption = window.prompt("Rock, paper, or scissors?");
+let userOption = '';
 
 /* 
-   userOption1's function is for "linting" or preventing any discrepencies in incorrect spelling of any of the options. 
+   playerChoice(); function is for "linting" or preventing any discrepencies in incorrect spelling of any of the options. 
    
-   The goal of 36-40 was to make spelling errors for "rock", "paper" or "scissors" irrelevant.
+   The goal of 39-45 was to make spelling errors for "rock", "paper" or "scissors" irrelevant.
    
    For instance, if a user spells rock like "rOcK", userOption1 will save the characters after the first letter, and make them lowercase.
    Ex.) userOption1 = "ock"
@@ -33,11 +33,6 @@ let userOption = window.prompt("Rock, paper, or scissors?");
    Ex.) userOption = "Rock"
 
 */
-let userOptionAppend = userOption.slice(1, userOption.length).toLowerCase();
-
-userOption = userOption[0].toUpperCase();
-
-userOption = userOption + userOptionAppend;
 
 function playerChoice() {
 
@@ -96,11 +91,16 @@ function playRound(userOption, computerOption) {
         console.log("Tie!");
     };
 }
-
+/* 
+When called on, this function will iterate 5 times. Each iteration will call upon three functions:
+playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while also correcting any capitalization errors.
+computerPlay() will generate a computer choice every time it is executed.
+and playRound() will compare both userOption and computerOption to print to the console who is the winner, and add points to the winner point variable.
+*/
 function game() {
     for (let i = 0; i < 5; i++) {
-        computerPlay();
         playerChoice();
+        computerPlay();
         playRound(userOption, computerOption);
     };
 
