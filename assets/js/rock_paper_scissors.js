@@ -39,6 +39,17 @@ userOption = userOption[0].toUpperCase();
 
 userOption = userOption + userOptionAppend;
 
+function playerChoice() {
+
+    userOption = window.prompt("Rock, paper, or scissors?");
+
+    let userOptionAppend = userOption.slice(1, userOption.length).toLowerCase();
+
+    userOption = userOption[0].toUpperCase();
+
+    userOption = userOption + userOptionAppend;
+}
+
 let computerOption;
 
 let playerPoints = 0;
@@ -49,16 +60,15 @@ function computerPlay() {
     randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
         computerOption = "Rock";
-        console.log(computerOption);
+        console.log(`The computer threw ${computerOption}!`);
     } else if (randomNumber === 1) {
         computerOption = "Paper";
-        console.log(computerOption);
+        console.log(`The computer threw ${computerOption}!`);
     } else if (randomNumber === 2) {
         computerOption = "Scissors"
-        console.log(computerOption);
+        console.log(`The computer threw ${computerOption}!`);
     } else {
         console.log("Error...");
-        console.log(computerOption);
     }
     return;
 }
@@ -90,6 +100,7 @@ function playRound(userOption, computerOption) {
 function game() {
     for (let i = 0; i < 5; i++) {
         computerPlay();
+        playerChoice();
         playRound(userOption, computerOption);
     };
 
