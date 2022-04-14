@@ -33,19 +33,28 @@ let userOption = '';
    Ex.) userOption = "Rock"
 
 */
+let userChoice;
 
 let rock = document.querySelector('#rock');
-rock.addEventListener('click', logAction);
+rock.addEventListener('click', chooseRock);
 
 let paper = document.querySelector('#paper');
+paper.addEventListener('click', choosePaper);
 
 let scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', chooseScissors);
 
-function logAction(e) {
-    console.log(e);    
+function chooseRock() {
+    userChoice = 'Rock';
 }
 
-let userChoice;
+function choosePaper() {
+    userChoice = 'Paper';
+}
+
+function chooseScissors() {
+    userChoice = 'Scissors';
+}
 
 function playerChoice() {
 
