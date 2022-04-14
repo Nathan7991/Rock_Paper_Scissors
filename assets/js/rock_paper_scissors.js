@@ -68,6 +68,11 @@ function computerPlay() {
     return;
 }
 
+/* 
+==================
+playRound Function 
+==================
+
 function playRound(userOption, computerOption) {
     if (userOption === "Rock" && computerOption === "Scissors") {
         console.log("You win this round!");
@@ -91,6 +96,8 @@ function playRound(userOption, computerOption) {
         console.log("Tie!");
     };
 }
+*/
+
 /* 
 When called on, this function will iterate 5 times. Each iteration will call upon three functions:
 playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while making it case-insensitive.
