@@ -35,10 +35,17 @@ let userOption = '';
 */
 
 let rock = document.querySelector('#rock');
+rock.addEventListener('click', logAction);
 
 let paper = document.querySelector('#paper');
 
 let scissors = document.querySelector('#scissors');
+
+function logAction(e) {
+    console.log(e);    
+}
+
+let userChoice;
 
 function playerChoice() {
 
