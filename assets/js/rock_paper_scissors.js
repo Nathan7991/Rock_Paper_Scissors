@@ -34,6 +34,12 @@ let userOption = '';
 
 */
 
+let rock = document.querySelector('#rock');
+
+let paper = document.querySelector('#paper');
+
+let scissors = document.querySelector('#scissors');
+
 function playerChoice() {
 
     userOption = window.prompt("Rock, paper, or scissors?");
