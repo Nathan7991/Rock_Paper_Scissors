@@ -64,23 +64,6 @@ let playerPoints = 0;
 
 let computerPoints = 0;
 
-function computerPlay() {
-    randomNumber = Math.floor(Math.random() * 3);
-    if (randomNumber === 0) {
-        computerOption = "Rock";
-        console.log(`The computer threw ${computerOption}!`);
-    } else if (randomNumber === 1) {
-        computerOption = "Paper";
-        console.log(`The computer threw ${computerOption}!`);
-    } else if (randomNumber === 2) {
-        computerOption = "Scissors"
-        console.log(`The computer threw ${computerOption}!`);
-    } else {
-        console.log("Error...");
-    }
-    return;
-}
-
 /* 
 ==================
 playRound Function 
