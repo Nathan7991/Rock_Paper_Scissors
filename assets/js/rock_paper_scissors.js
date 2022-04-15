@@ -69,21 +69,20 @@ When called on, this function will iterate 5 times. Each iteration will call upo
 playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while making it case-insensitive.
 computerPlay() will generate a computer choice every time it is executed.
 and playRound() will compare both userOption and computerOption to print to the console who is the winner, and add points to the winner point variable.
-*/
+
 function game() {
     for (let i = 0; i < 5; i++) {
         playerChoice();
         computerPlay();
         playRound(userOption, computerOption);
     };
-
-    if (computerPoints < playerPoints) {
-        console.log("You won!")
-   } else if (playerPoints < computerPoints) {
-       console.log("You lost!")
-   } else {
-       console.log("It's a tie!")
-   };
-
-   return;
+       return;
 }
+*/
+if (computerPoints < playerPoints) {
+    console.log("You won!")
+} else if (playerPoints < computerPoints) {
+       console.log("You lost!")
+} else {
+   console.log("It's a tie!")
+};
