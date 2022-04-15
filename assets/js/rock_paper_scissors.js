@@ -9,21 +9,27 @@ function playRound(userChoice) {
     if (userChoice === "Rock" && computerOption === 2) {
         console.log("You win this round!");
         playerPoints++;
+        round++;
     } else if (userChoice === "Paper" && computerOption == 0) {
         console.log("You win this round!");
         playerPoints++;
+        round++;
     } else if (userChoice === "Scissors" && computerOption === 1) {
         console.log("You win this round!");
         playerPoints++;
+        round++;
     } else if (userChoice === "Rock" && computerOption === 1) {
         console.log("You lost! The computer wins this round!");
         computerPoints++;
+        round++;
     } else if (userChoice === "Paper" && computerOption === 2) {
         console.log("You lost! The computer wins this round!");
         computerPoints++;
+        round++;
     } else if (userChoice === "Scissors" && computerOption === 0) {
         console.log("You lost! The computer wins this round!");
         computerPoints++;
+        round++;
     } else {
         console.log("Tie!");
     };
