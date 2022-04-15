@@ -89,10 +89,16 @@ function game() {
        return;
 }
 */
-if (computerPoints < playerPoints) {
-    console.log("You won!")
-} else if (playerPoints < computerPoints) {
-       console.log("You lost!")
+if (round >= 5) {
+    if (playerPoints > computerPoints) {
+        console.log('Congratulations! You won!');
+    } else {
+        console.log('You lost!');
+    }
 } else {
-   console.log("It's a tie!")
+    if (round < 5) {
+        console.log(`Round ${round}!`);
+    } else {
+        console.log(`Final round!`);
+    }
 };
