@@ -32,7 +32,9 @@ function playRound(userChoice) {
         round++;
     } else {
         console.log("Tie!");
+        round++;
     };
+    //console.log(round);
 }
 
 let rock = document.querySelector('#rock');
