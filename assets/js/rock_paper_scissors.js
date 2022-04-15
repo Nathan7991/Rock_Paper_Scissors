@@ -64,6 +64,8 @@ let playerPoints = 0;
 
 let computerPoints = 0;
 
+let round = 0;
+
 /* 
 When called on, this function will iterate 5 times. Each iteration will call upon three functions:
 playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while making it case-insensitive.
