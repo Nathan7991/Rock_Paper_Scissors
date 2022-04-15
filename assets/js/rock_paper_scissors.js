@@ -2,6 +2,26 @@ let userChoice;
 
 let computerOption;
 
+function decideWinner() {
+    if (playerPoints > computerPoints) {
+        console.log('Congratulations! You won!');
+    } else if (computerPoints > playerPoints) {
+        console.log('You lose!');
+    } else {
+        console.log('Bonus round!')
+    }
+}
+
+function announceRound() {
+    if (round < 5) {
+        console.log(`Round ${round}!`);
+    } else if (round === 5) {
+        console.log('Final round!');
+    } else {
+        decideWinner();
+    }
+}
+
 function playRound(userChoice) {
     
     computerOption = Math.floor(Math.random() * 3);
@@ -10,29 +30,36 @@ function playRound(userChoice) {
         console.log("You win this round!");
         playerPoints++;
         round++;
+        announceRound();
     } else if (userChoice === "Paper" && computerOption == 0) {
         console.log("You win this round!");
         playerPoints++;
         round++;
+        announceRound();
     } else if (userChoice === "Scissors" && computerOption === 1) {
         console.log("You win this round!");
         playerPoints++;
         round++;
+        announceRound();
     } else if (userChoice === "Rock" && computerOption === 1) {
         console.log("You lost! The computer wins this round!");
         computerPoints++;
         round++;
+        announceRound();
     } else if (userChoice === "Paper" && computerOption === 2) {
         console.log("You lost! The computer wins this round!");
         computerPoints++;
         round++;
+        announceRound();
     } else if (userChoice === "Scissors" && computerOption === 0) {
         console.log("You lost! The computer wins this round!");
         computerPoints++;
         round++;
+        announceRound();
     } else {
         console.log("Tie!");
         round++;
+        announceRound();
     };
     //console.log(round);
 }
@@ -72,7 +99,7 @@ let playerPoints = 0;
 
 let computerPoints = 0;
 
-let round = 0;
+let round = 1;
 
 /* 
 When called on, this function will iterate 5 times. Each iteration will call upon three functions:
@@ -89,16 +116,35 @@ function game() {
        return;
 }
 */
-if (round >= 5) {
-    if (playerPoints > computerPoints) {
-        console.log('Congratulations! You won!');
-    } else {
-        console.log('You lost!');
-    }
+
+/*
+if (round < 5) {
+    console.log(`Round ${round}!`);
 } else {
+    console.log(`Final round!`);
+};
+*/
+
+/*
+let i = 0;
+
+while(i < 5) {
     if (round < 5) {
         console.log(`Round ${round}!`);
     } else {
-        console.log(`Final round!`);
+        console.log('Final round!');
     }
-};
+    i++
+}
+
+
+if (round < 5) {
+    if (playerPoints > computerPoints) {
+        console.log('Congratulations! You won!');
+    } else if (computerPoints > playerPoints) {
+        console.log('You lose!');
+    }
+} else {
+    console.log('One more round!');
+}
+*/
