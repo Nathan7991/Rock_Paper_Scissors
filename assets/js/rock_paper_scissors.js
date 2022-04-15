@@ -44,16 +44,20 @@ paper.addEventListener('click', choosePaper);
 let scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', chooseScissors);
 
+// The following functions will return the choice of the button pressed to userChoice.
 function chooseRock() {
     userChoice = 'Rock';
+    return;
 }
 
 function choosePaper() {
     userChoice = 'Paper';
+    return;
 }
 
 function chooseScissors() {
     userChoice = 'Scissors';
+    return;
 }
 
 function playerChoice() {
