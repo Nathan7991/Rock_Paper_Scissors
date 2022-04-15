@@ -16,24 +16,38 @@ How will the user give input?
     ▪ “computerPoints”
         • When either the userPoints or computerPoints variable value reaches 3, then the game is over and a winner is chosen.
 */
-let userOption = '';
 
-/* 
-   playerChoice(); function is for "linting" or preventing any discrepencies in incorrect spelling of any of the options. 
-   
-   The goal of 39-45 was to make spelling errors for "rock", "paper" or "scissors" irrelevant.
-   
-   For instance, if a user spells rock like "rOcK", userOption1 will save the characters after the first letter, and make them lowercase.
-   Ex.) userOption1 = "ock"
 
-   userOption will then equal the first character of the user's answer, which will also be set to upper case no matter what.
-   Ex.) userOption = "R"
-   
-   Finally, userOption is set to equal the result of concatenation between userOption's previous value, "R", plus userOption1 "ock".
-   Ex.) userOption = "Rock"
-
-*/
 let userChoice;
+
+let computerOption;
+
+function playRound(userChoice) {
+    
+    computerOption = Math.floor(Math.random() * 3);
+
+    if (userChoice === "Rock" && computerOption === 2) {
+        console.log("You win this round!");
+        playerPoints++;
+    } else if (userChoice === "Paper" && computerOption == 0) {
+        console.log("You win this round!");
+        playerPoints++;
+    } else if (userChoice === "Scissors" && computerOption === 1) {
+        console.log("You win this round!");
+        playerPoints++;
+    } else if (userChoice === "Rock" && computerOption === 1) {
+        console.log("You lost! The computer wins this round!");
+        computerPoints++;
+    } else if (userChoice === "Paper" && computerOption === 2) {
+        console.log("You lost! The computer wins this round!");
+        computerPoints++;
+    } else if (userChoice === "Scissors" && computerOption === 0) {
+        console.log("You lost! The computer wins this round!");
+        computerPoints++;
+    } else {
+        console.log("Tie!");
+    };
+}
 
 let rock = document.querySelector('#rock');
 rock.addEventListener('click', chooseRock);
@@ -44,35 +58,28 @@ paper.addEventListener('click', choosePaper);
 let scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', chooseScissors);
 
-// The following functions will return the choice of the button pressed to userChoice.
+/* The following functions will return the choice of the
+   button pressed and also callback the playRound function
+   so that the computer choice is also determined each time
+   the button is clicked, and a result is determined.
+*/
+
 function chooseRock() {
     userChoice = 'Rock';
-    return;
+    playRound(userChoice);
 }
 
 function choosePaper() {
     userChoice = 'Paper';
-    return;
+    playRound(userChoice);
 }
 
 function chooseScissors() {
     userChoice = 'Scissors';
-    return;
+    playRound(userChoice);
 }
 
-function playerChoice() {
-
-    userOption = window.prompt("Rock, paper, or scissors?");
-
-    let userOptionAppend = userOption.slice(1, userOption.length).toLowerCase();
-
-    userOption = userOption[0].toUpperCase();
-
-    userOption = userOption + userOptionAppend;
-}
-
-let computerOption;
-
+//User and Computer Points Variables 
 let playerPoints = 0;
 
 let computerPoints = 0;
