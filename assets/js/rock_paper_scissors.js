@@ -65,36 +65,6 @@ let playerPoints = 0;
 let computerPoints = 0;
 
 /* 
-==================
-playRound Function 
-==================
-
-function playRound(userOption, computerOption) {
-    if (userOption === "Rock" && computerOption === "Scissors") {
-        console.log("You win this round!");
-        playerPoints++;
-    } else if (userOption === "Paper" && computerOption == "Rock") {
-        console.log("You win this round!");
-        playerPoints++;
-    } else if (userOption === "Scissors" && computerOption === "Paper") {
-        console.log("You win this round!");
-        playerPoints++;
-    } else if (userOption === "Rock" && computerOption === "Paper") {
-        console.log("You lost! The computer wins this round!");
-        computerPoints++;
-    } else if (userOption === "Paper" && computerOption === "Scissors") {
-        console.log("You lost! The computer wins this round!");
-        computerPoints++;
-    } else if (userOption === "Scissors" && computerOption === "Rock") {
-        console.log("You lost! The computer wins this round!");
-        computerPoints++;
-    } else {
-        console.log("Tie!");
-    };
-}
-*/
-
-/* 
 When called on, this function will iterate 5 times. Each iteration will call upon three functions:
 playerChoice() which will prompt the user to input data (either rock, paper, or scissors), while making it case-insensitive.
 computerPlay() will generate a computer choice every time it is executed.
