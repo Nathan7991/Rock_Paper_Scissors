@@ -9,6 +9,8 @@ function decideWinner() {
         console.log('Congratulations! You won!');
     } else if (computerPoints > playerPoints) {
         console.log('You lose!... Try again?');
+        //Maybe I'll add an if...else statement based on the
+        //player's decision to continue or quit if they lose.
     } else {
         console.log('Bonus round!')
     }
