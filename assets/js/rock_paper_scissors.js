@@ -2,11 +2,13 @@ let userChoice;
 
 let computerOption;
 
+console.log("Round 1!")
+
 function decideWinner() {
     if (playerPoints > computerPoints) {
         console.log('Congratulations! You won!');
     } else if (computerPoints > playerPoints) {
-        console.log('You lose!');
+        console.log('You lose!... Try again?');
     } else {
         console.log('Bonus round!')
     }
