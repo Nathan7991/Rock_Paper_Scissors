@@ -63,9 +63,9 @@ function typeWriter() {
 console.log("Round 1!")
 
 function decideWinner() {
-    if (playerPoints > computerPoints) {
+    if (computerPoints === 0) {
         text = 'Congratulations! You won!';
-    } else if (computerPoints > playerPoints) {
+    } else if (playerPoints === 0) {
         text = 'You lose!... Try again?';
         //Maybe I'll add an if...else statement based on the
         //player's decision to continue or quit if they lose.
