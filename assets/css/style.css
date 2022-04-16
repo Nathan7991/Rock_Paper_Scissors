@@ -92,8 +92,10 @@ body {
 #outputDisplay {
 	width: 500px; 
 	height: 200px;
-	border: solid rgb(255, 0, 0) 2px;
+	border: solid rgb(255, 0, 0) 1px;
 	flex: 1;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
 #secondOutputDisplay {
