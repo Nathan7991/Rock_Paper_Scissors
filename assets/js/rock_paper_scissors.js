@@ -37,16 +37,16 @@ function decideWinner() {
         //Maybe I'll add an if...else statement based on the
         //player's decision to continue or quit if they lose.
     } else {
-        text = 'Bonus round!';
+        text = 'Tie-breaker!';
     }
 }
 
 function announceRound() {
     if (round < 5) {
-        text = `Round ${round}!`
+        text = `Round ${round}! `
         typeWriter(text);
     } else if (round === 5) {
-        text = 'Final round!'
+        text = 'Final round! '
         typeWriter(text);
     } else {
         decideWinner();
