@@ -38,9 +38,9 @@ function decideWinner() {
 
 function announceRound() {
     if (round < 5) {
-        console.log(`Round ${round}!`);
+        typeWriter(`Round ${round}!`);
     } else if (round === 5) {
-        console.log('Final round!');
+        typeWriter('Final round!');
     } else {
         decideWinner();
     }
