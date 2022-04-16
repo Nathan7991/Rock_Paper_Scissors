@@ -6,7 +6,15 @@ const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
 
+// Display container and img nodes for the player's amount of lives.
 const thirdDisplay = document.querySelector('#thirdOutputDisplay');
+let firstHeart = document.createElement('img');
+firstHeart.setAttribute('src', './assets/heart.gif');
+thirdDisplay.appendChild(firstHeart);
+
+let secondHeart = document.createElement('img');
+secondHeart.setAttribute('src', './assets/heart.gif');
+thirdDisplay.appendChild(secondHeart);
 
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
