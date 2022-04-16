@@ -2,6 +2,8 @@ let userChoice;
 
 let computerOption;
 
+let br = document.createElement('br');
+
 const display = document.querySelector('#outputDisplay');
 
 let para = document.createElement('p');
@@ -12,13 +14,16 @@ let text; // Will hold the text for displayer.
 
 let i = 0;
 
-let speed = 50; //speed in of the typewriter effect in ms.
+let speed = 60; //speed in of the typewriter effect in ms.
 
-function typeWriter(text) {
+function typeWriter() {
     if (i < text.length) {
         document.getElementById('displayPara').textContent += text.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
+    } else if (i === text.length) {
+        i = 0;
+        display.appendChild(br);
     }
 }
 
@@ -26,23 +31,26 @@ console.log("Round 1!")
 
 function decideWinner() {
     if (playerPoints > computerPoints) {
-        console.log('Congratulations! You won!');
+        text = 'Congratulations! You won!';
     } else if (computerPoints > playerPoints) {
-        console.log('You lose!... Try again?');
+        text = 'You lose!... Try again?';
         //Maybe I'll add an if...else statement based on the
         //player's decision to continue or quit if they lose.
     } else {
-        console.log('Bonus round!')
+        text = 'Bonus round!';
     }
 }
 
 function announceRound() {
     if (round < 5) {
-        typeWriter(`Round ${round}!`);
+        text = `Round ${round}!`
+        typeWriter(text);
     } else if (round === 5) {
-        typeWriter('Final round!');
+        text = 'Final round!'
+        typeWriter(text);
     } else {
         decideWinner();
+        typeWriter(text);
     }
 }
 
