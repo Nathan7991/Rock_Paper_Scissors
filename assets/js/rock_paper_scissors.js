@@ -4,6 +4,13 @@ let computerOption;
 
 const display = document.querySelector('#outputDisplay');
 
+let para = document.createElement('p');
+display.appendChild(para);
+
+let i = 0;
+
+let speed = 50; //speed in of the typewriter effect in ms.
+
 console.log("Round 1!")
 
 function decideWinner() {
