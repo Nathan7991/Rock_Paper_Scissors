@@ -10,8 +10,8 @@ let para = document.createElement('p');
 para.setAttribute('id','displayPara');
 display.appendChild(para);
 
-let secondPara = document.createElement('p');
-secondPara.setAttribute('class', 'typeText');
+let typeText = document.createElement('p');
+typeText.setAttribute('class', 'typeText');
 display.appendChild(secondPara);
 
 
