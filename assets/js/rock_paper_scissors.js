@@ -2,6 +2,8 @@ let userChoice;
 
 let computerOption;
 
+const display = document.querySelector('#outputDisplay');
+
 console.log("Round 1!")
 
 function decideWinner() {
