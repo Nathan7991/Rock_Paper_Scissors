@@ -2,11 +2,11 @@ let userChoice;
 
 let computerOption;
 
-let br = document.createElement('br');
-
 const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
+
+const thirdDisplay = document.querySelector('#thirdOutputDisplay');
 
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
