@@ -5,13 +5,20 @@ let computerOption;
 const display = document.querySelector('#outputDisplay');
 
 let para = document.createElement('p');
+para.setAttribute('id','displayPara');
 display.appendChild(para);
 
-let text;
+let text; // Will hold the text for displayer.
 
 let i = 0;
 
 let speed = 50; //speed in of the typewriter effect in ms.
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementBy
+    }
+}
 
 console.log("Round 1!")
 
