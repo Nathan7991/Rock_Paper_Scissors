@@ -160,9 +160,9 @@ function chooseScissors() {
 }
 
 //User and Computer Points Variables 
-let playerPoints = 0;
+let playerPoints = 5;
 
-let computerPoints = 0;
+let computerPoints = 5;
 
 let round = 1;
 
