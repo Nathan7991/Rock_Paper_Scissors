@@ -10,19 +10,29 @@ const secondDisplay = document.querySelector('#secondOutputDisplay');
 const thirdDisplay = document.querySelector('#thirdOutputDisplay');
 let firstHeart = document.createElement('img');
 firstHeart.setAttribute('src', './assets/heart.gif');
+firstHeart.classList.add('heart');
 thirdDisplay.appendChild(firstHeart);
 
 let secondHeart = document.createElement('img');
 secondHeart.setAttribute('src', './assets/heart.gif');
+secondHeart.classList.add('heart');
 thirdDisplay.appendChild(secondHeart);
 
 let thirdHeart = document.createElement('img');
 thirdHeart.setAttribute('src', './assets/heart.gif');
+thirdHeart.classList.add('heart');
 thirdDisplay.appendChild(thirdHeart);
 
 let fourthHeart = document.createElement('img');
 fourthHeart.setAttribute('src', './assets/heart.gif');
+fourthHeart.classList.add('heart');
 thirdDisplay.appendChild(fourthHeart);
+
+let fifthHeart = document.createElement('img');
+fifthHeart.setAttribute('src', './assets/heart.gif');
+fifthHeart.classList.add('heart');
+thirdDisplay.appendChild(fifthHeart);
+
 
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
