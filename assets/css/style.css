@@ -100,5 +100,10 @@ body {
 	width: 500px;
 	height: 200px;
 	border: solid rgb(200, 100, 20) 2px;
-	flex: 7;
+	flex: 6;
+}
+
+#thirdOutputDisplay {
+	border: solid rgb(0, 255, 200);
+	flex: 2;
 }
