@@ -16,6 +16,14 @@ let secondHeart = document.createElement('img');
 secondHeart.setAttribute('src', './assets/heart.gif');
 thirdDisplay.appendChild(secondHeart);
 
+let thirdHeart = document.createElement('img');
+thirdHeart.setAttribute('src', './assets/heart.gif');
+thirdDisplay.appendChild(thirdHeart);
+
+let fourthHeart = document.createElement('img');
+fourthHeart.setAttribute('src', './assets/heart.gif');
+thirdDisplay.appendChild(fourthHeart);
+
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
 display.appendChild(para);
