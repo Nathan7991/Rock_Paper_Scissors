@@ -10,6 +10,9 @@ let para = document.createElement('p');
 para.setAttribute('id','displayPara');
 display.appendChild(para);
 
+let secondPara = document.createElement('p');
+display.appendChild(secondPara);
+
 let text; // Will hold the text for displayer.
 
 let i = 0;
@@ -26,6 +29,20 @@ function typeWriter() {
         display.appendChild(br);
     }
 }
+
+var typeWriter2 = new Typewriter(secondPara, {
+    loop: true
+});
+
+typewriter2.typeString('Hello World!')
+    .pauseFor(2500)
+    .deleteAll()
+    .typeString('Strings can be removed')
+    .pauseFor(2500)
+    .deleteChars(7)
+    .typeString('<strong>altered!</strong>')
+    .pauseFor(2500)
+    .start();
 
 console.log("Round 1!")
 
