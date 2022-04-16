@@ -6,16 +6,18 @@ let br = document.createElement('br');
 
 const display = document.querySelector('#outputDisplay');
 
+const secondDisplay = document.querySelector('#secondOutputDisplay');
+
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
 display.appendChild(para);
 
-let typeText = document.createElement('p');
-typeText.setAttribute('class', 'typeText');
-display.appendChild(secondPara);
-
-
 let text; // Will hold the text for displayer.
+
+let secondPara = document.createElement('p');
+secondPara.setAttribute('class', 'typeText')
+secondDisplay.appendChild(secondPara);
+
 
 let i = 0;
 
@@ -64,37 +66,37 @@ function playRound(userChoice) {
     computerOption = Math.floor(Math.random() * 3);
 
     if (userChoice === "Rock" && computerOption === 2) {
-        console.log("You win this round!");
+        secondPara.innerText = 'You win this round!';
         playerPoints++;
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption == 0) {
-        console.log("You win this round!");
+        secondPara.innerText = 'You win this round!';
         playerPoints++;
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 1) {
-        console.log("You win this round!");
+        secondPara.innerText = 'You win this round!';
         playerPoints++;
         round++;
         announceRound();
     } else if (userChoice === "Rock" && computerOption === 1) {
-        console.log("You lost! The computer wins this round!");
+        secondPara.innerText = 'You lose this round!';
         computerPoints++;
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption === 2) {
-        console.log("You lost! The computer wins this round!");
+        secondPara.innerText = 'You lose this round!';
         computerPoints++;
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 0) {
-        console.log("You lost! The computer wins this round!");
+        secondPara.innerText = 'You lose this round!';
         computerPoints++;
         round++;
         announceRound();
     } else {
-        console.log("Tie!");
+        secondPara.innerText = 'Tie!';
         round++;
         announceRound();
     };
