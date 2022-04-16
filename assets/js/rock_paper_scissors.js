@@ -14,9 +14,11 @@ let i = 0;
 
 let speed = 50; //speed in of the typewriter effect in ms.
 
-function typeWriter() {
+function typeWriter(text) {
     if (i < text.length) {
-        document.getElementBy
+        document.getElementById('displayPara').textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
     }
 }
 
