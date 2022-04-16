@@ -10,6 +10,11 @@ let para = document.createElement('p');
 para.setAttribute('id','displayPara');
 display.appendChild(para);
 
+let secondPara = document.createElement('p');
+secondPara.setAttribute('class', 'typeText');
+display.appendChild(secondPara);
+
+
 let text; // Will hold the text for displayer.
 
 let i = 0;
