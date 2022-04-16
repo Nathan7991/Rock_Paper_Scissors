@@ -93,32 +93,32 @@ function playRound(userChoice) {
 
     if (userChoice === "Rock" && computerOption === 2) {
         secondPara.innerText = 'You win this round!';
-        playerPoints++;
+        computerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption == 0) {
         secondPara.innerText = 'You win this round!';
-        playerPoints++;
+        computerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 1) {
         secondPara.innerText = 'You win this round!';
-        playerPoints++;
+        computerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Rock" && computerOption === 1) {
         secondPara.innerText = 'You lose this round!';
-        computerPoints++;
+        playerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption === 2) {
         secondPara.innerText = 'You lose this round!';
-        computerPoints++;
+        playerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 0) {
         secondPara.innerText = 'You lose this round!';
-        computerPoints++;
+        playerPoints--;
         round++;
         announceRound();
     } else {
