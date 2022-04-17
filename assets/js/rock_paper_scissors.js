@@ -1,4 +1,6 @@
 //Variables
+let userName = window.prompt('What is your name?');
+
 let userChoice;
 
 let computerOption;
@@ -10,11 +12,13 @@ let computerPoints = 5;
 
 let round = 1;
 
+let resetAmount = 0;
+
 const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
 let startText = document.createElement('p');
-startText.textContent = "You are humanity's last hope. Defeat the computer and save the world. Round 1 begins now..."
+startText.textContent = (userName === '' || userName === null) ?  `You are humanity's last hope. Defeat the computer and save the world. Round 1 begins now...` : `${userName}, you are humanity's last hope. Defeat the computer and save the world. Round 1 begins now...`;
 secondDisplay.appendChild(startText);
 
 const buttonContainer = document.querySelector('#buttonContainer');
@@ -81,7 +85,7 @@ Functions
 
 let i = 0;
 
-let speed = 60; //speed in of the typewriter effect in ms.
+let speed = 15; //speed in of the typewriter effect in ms.
 
 let text; // Will hold the text for displayer.
 
@@ -133,6 +137,11 @@ function playRound(userChoice) {
     
     computerOption = Math.floor(Math.random() * 3);
 
+    if(round === 1 && resetAmount === 0) {
+        removeStartText();
+        
+    }
+
     if (userChoice === "Rock" && computerOption === 2) {
         secondPara.innerText = 'You win this round!';
         computerPoints--;
@@ -177,7 +186,7 @@ function playRound(userChoice) {
 function announceRound() {
     if (playerPoints !== 0 && computerPoints !== 0) {
         removeTextContent();
-        text = `Round ${round}! `
+        text = `Round ${round}! (Computer lives: ${computerPoints})`
         typeWriter(text);
     } else {
         decideWinner();
@@ -209,10 +218,11 @@ function reset() {
     removeFade();
     buttonContainer.removeChild(restart);
     document.getElementById('displayPara').textContent = '';
-    secondPara.innerText = 'New game!';
+    secondPara.innerText = 'Round 1!';
     playerPoints = 5;
     computerPoints = 5;
     round = 1;
+    resetAmount++;
 }
 
 // Function will add .fade class to each heart depending if the lower number has the class.
