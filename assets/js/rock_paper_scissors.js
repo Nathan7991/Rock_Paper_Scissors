@@ -143,34 +143,34 @@ function playRound(userChoice) {
     }
 
     if (userChoice === "Rock" && computerOption === 2) {
-        secondPara.innerText = 'You win this round!';
+        secondPara.innerText = 'The computer chose scissors! You win this round!';
         computerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption == 0) {
-        secondPara.innerText = 'You win this round!';
+        secondPara.innerText = 'The computer fought back with a rock, but their effort was futile. You win this round!';
         computerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 1) {
-        secondPara.innerText = 'You win this round!';
+        secondPara.innerText = 'The computer defended themselves with a piece of paper. You win this round!';
         computerPoints--;
         round++;
         announceRound();
     } else if (userChoice === "Rock" && computerOption === 1) {
-        secondPara.innerText = 'You lose this round!';
+        secondPara.innerText = 'The computer deflected your rock with a piece of paper! You lose this round!';
         playerPoints--;
         addFade();
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption === 2) {
-        secondPara.innerText = 'You lose this round!';
+        secondPara.innerText = 'The computer sliced through your paper! You lose this round!';
         playerPoints--;
         addFade();
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 0) {
-        secondPara.innerText = 'You lose this round!';
+        secondPara.innerText = 'The computer smashed your scissors with a rock! You lose this round!';
         playerPoints--;
         addFade();
         round++;
