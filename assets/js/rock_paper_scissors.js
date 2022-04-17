@@ -6,9 +6,14 @@ const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
 
+const buttonContainer = document.querySelector('#buttonContainer');
+
+let text; // Will hold the text for displayer.
+
 let restart = document.createElement('button');
 restart.innerText = "Try again";
 restart.setAttribute('id', 'restart');
+restart.addEventListener('click', reset);
 
 // Display container and img nodes for the player's amount of lives.
 const thirdDisplay = document.querySelector('#thirdOutputDisplay');
@@ -58,11 +63,28 @@ function addFade() {
     }
 }
 
+// Resets the game
+function reset() {
+    removeFade();
+    buttonContainer.removeChild(restart);
+    secondPara.innerText = 'New game!';
+    playerPoints = 5;
+    computerPoints = 5;
+    round = 1;
+}
+
+// function to remove class 'fade' from hearts.
+function removeFade() {
+    firstHeart.classList.remove('fade');
+    secondHeart.classList.remove('fade');
+    thirdHeart.classList.remove('fade');
+    fourthHeart.classList.remove('fade');
+    fifthHeart.classList.remove('fade');
+}
+
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
 display.appendChild(para);
-
-let text; // Will hold the text for displayer.
 
 let secondPara = document.createElement('p');
 secondPara.setAttribute('class', 'typeText')
@@ -100,7 +122,7 @@ function decideWinner() {
 
 function restartGame() {
     restart.setAttribute('class', 'fadeIn');
-    secondDisplay.appendChild(restart);
+    buttonContainer.appendChild(restart);
 }
 
 function announceRound() {
