@@ -198,3 +198,11 @@ header {
 	display: flex;
 	justify-content: center;
 }
+
+#optionsContainer {
+	height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
