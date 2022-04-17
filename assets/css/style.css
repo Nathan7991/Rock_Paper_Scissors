@@ -92,6 +92,10 @@ html * {
 	flex-direction: column;
 }
 
+#displayPara {
+	align-self: center;
+}
+
 .typeText::after {
 	content: "|";
 	animation: blink 1s infinite;
