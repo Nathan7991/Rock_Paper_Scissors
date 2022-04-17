@@ -6,6 +6,9 @@ const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
 
+let restart = document.createElement('button');
+restart.setAttribute('id', 'restart');
+
 // Display container and img nodes for the player's amount of lives.
 const thirdDisplay = document.querySelector('#thirdOutputDisplay');
 let firstHeart = document.createElement('img');
@@ -35,7 +38,7 @@ thirdDisplay.appendChild(fifthHeart);
 
 // Function will add .fade class to each heart depending if the lower number has the class.
 function addFade() {
-    switch(playPoints) {
+    switch(playerPoints) {
         case 4:
             fifthHeart.classList.add('fade');
             break;
@@ -44,10 +47,13 @@ function addFade() {
             break;
         case 2:
             thirdHeart.classList.add('fade');
+            break;
         case 1:
             secondHeart.classList.add('fade');
+            break;
         case 0:
             firstHeart.classList.add('fade');
+            break;
     }
 }
 
@@ -73,7 +79,6 @@ function typeWriter() {
         setTimeout(typeWriter, speed);
     } else if (i === text.length) {
         i = 0;
-        display.appendChild(br);
     }
 }
 
@@ -89,6 +94,10 @@ function decideWinner() {
     } else {
         text = 'Tie-breaker!';
     }
+}
+
+function restartGame() {
+    secondDisplay.appendChild(restart);
 }
 
 function announceRound() {
