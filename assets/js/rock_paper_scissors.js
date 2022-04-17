@@ -92,6 +92,12 @@ function typeWriter() {
     }
 }
 
+//To be called in the announceRound() function in order to get rid of text.
+function removeTextContent() {
+    document.getElementById('displayPara').textContent = '';
+}
+
+
 /* The following functions will return the choice of the
    button pressed and also callback the playRound function
    so that the computer choice is also determined each time
@@ -160,10 +166,12 @@ function playRound(userChoice) {
 
 function announceRound() {
     if (playerPoints !== 0 && computerPoints !== 0) {
+        removeTextContent();
         text = `Round ${round}! `
         typeWriter(text);
     } else {
         decideWinner();
+        removeTextContent;
         typeWriter(text);
     }
 }
