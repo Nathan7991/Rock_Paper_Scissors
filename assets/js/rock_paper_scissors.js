@@ -77,8 +77,6 @@ fifthHeart.setAttribute('src', './assets/heart.gif');
 fifthHeart.classList.add('heart');
 thirdDisplay.appendChild(fifthHeart);
 
-console.log("Round 1!")
-
 /*
 ==========
 Functions
