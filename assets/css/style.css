@@ -94,6 +94,7 @@ html * {
 
 #displayPara {
 	align-self: center;
+    margin: 10px;
 }
 
 .typeText::after {
@@ -177,7 +178,6 @@ header {
 	border: solid rgb(255, 0, 0) 1px;
 	flex: 1;
 	display: flex;
-    justify-content: center;
 }
 
 #secondOutputDisplay {
