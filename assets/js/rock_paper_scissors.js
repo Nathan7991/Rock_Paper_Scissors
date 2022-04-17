@@ -33,6 +33,23 @@ fifthHeart.setAttribute('src', './assets/heart.gif');
 fifthHeart.classList.add('heart');
 thirdDisplay.appendChild(fifthHeart);
 
+// Function will add .fade class to each heart depending if the lower number has the class.
+function addFade() {
+    switch(playPoints) {
+        case 4:
+            fifthHeart.classList.add('fade');
+            break;
+        case 3:
+            fourthHeart.classList.add('fade');
+            break;
+        case 2:
+            thirdHeart.classList.add('fade');
+        case 1:
+            secondHeart.classList.add('fade');
+        case 0:
+            firstHeart.classList.add('fade');
+    }
+}
 
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
@@ -106,16 +123,19 @@ function playRound(userChoice) {
     } else if (userChoice === "Rock" && computerOption === 1) {
         secondPara.innerText = 'You lose this round!';
         playerPoints--;
+        addFade();
         round++;
         announceRound();
     } else if (userChoice === "Paper" && computerOption === 2) {
         secondPara.innerText = 'You lose this round!';
         playerPoints--;
+        addFade();
         round++;
         announceRound();
     } else if (userChoice === "Scissors" && computerOption === 0) {
         secondPara.innerText = 'You lose this round!';
         playerPoints--;
+        addFade();
         round++;
         announceRound();
     } else {
