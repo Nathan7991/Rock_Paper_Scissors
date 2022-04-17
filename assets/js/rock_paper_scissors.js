@@ -173,9 +173,9 @@ function decideWinner() {
         text = 'Congratulations! You won!';
     } else if (playerPoints === 0) {
         text = 'You lose!... Try again?';
+        //This function will provide the option to reset the game,
+        //making a button appear that will execute the reset() function.
         restartGame();
-        //Maybe I'll add an if...else statement based on the
-        //player's decision to continue or quit if they lose.
     } else {
         text = 'Tie-breaker!';
     }
