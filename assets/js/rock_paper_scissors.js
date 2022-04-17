@@ -199,9 +199,13 @@ function announceRound() {
 
 function decideWinner() {
     if (computerPoints === 0) {
-        text = 'Congratulations! You won!';
+        removeTextContent();
+        removePlayerOptions();
+        secondPara.innerText = 'Congratulations, you won!!!';
     } else if (playerPoints === 0) {
-        text = 'You lose!... Try again?';
+        removeTextContent();
+        removePlayerOptions();
+        secondPara.innerText = 'You lose... Try again?';
         //This function will provide the option to reset the game,
         //making a button appear that will execute the reset() function.
         restartGame();
@@ -218,6 +222,7 @@ function restartGame() {
 // Resets the game
 function reset() {
     removeFade();
+    addPlayerOptions();
     buttonContainer.removeChild(restart);
     document.getElementById('displayPara').textContent = '';
     secondPara.innerText = 'Round 1!';
@@ -248,11 +253,22 @@ function addFade() {
     }
 }
 
-// function to remove class 'fade' from hearts.
 function removeFade() {
     firstHeart.classList.remove('fade');
     secondHeart.classList.remove('fade');
     thirdHeart.classList.remove('fade');
     fourthHeart.classList.remove('fade');
     fifthHeart.classList.remove('fade');
+}
+
+function removePlayerOptions() {
+    rock.classList.add('fade');
+    paper.classList.add('fade');
+    scissors.classList.add('fade');
+}
+
+function addPlayerOptions() {
+    rock.classList.remove('fade');
+    paper.classList.remove('fade');
+    scissors.classList.remove('fade');
 }
