@@ -5,6 +5,8 @@ let userChoice;
 
 let computerOption;
 
+let optionsContainer = document.querySelector('#optionsContainer');
+
 //User and Computer Points Variables 
 let playerPoints = 5;
 
