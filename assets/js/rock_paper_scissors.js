@@ -1,6 +1,14 @@
+//Variables
 let userChoice;
 
 let computerOption;
+
+//User and Computer Points Variables 
+let playerPoints = 5;
+
+let computerPoints = 5;
+
+let round = 1;
 
 const display = document.querySelector('#outputDisplay');
 
@@ -8,12 +16,32 @@ const secondDisplay = document.querySelector('#secondOutputDisplay');
 
 const buttonContainer = document.querySelector('#buttonContainer');
 
+//Paragraph variables
+let para = document.createElement('p');
+para.setAttribute('id','displayPara');
+display.appendChild(para);
+
+let secondPara = document.createElement('p');
+secondPara.setAttribute('class', 'typeText')
+secondDisplay.appendChild(secondPara);
+
 let text; // Will hold the text for displayer.
 
 let restart = document.createElement('button');
 restart.innerText = "Try again";
 restart.setAttribute('id', 'restart');
 restart.addEventListener('click', reset);
+
+//Choice button reference variables
+
+let rock = document.querySelector('#rock');
+rock.addEventListener('click', chooseRock);
+
+let paper = document.querySelector('#paper');
+paper.addEventListener('click', choosePaper);
+
+let scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', chooseScissors);
 
 // Display container and img nodes for the player's amount of lives.
 const thirdDisplay = document.querySelector('#thirdOutputDisplay');
@@ -42,54 +70,13 @@ fifthHeart.setAttribute('src', './assets/heart.gif');
 fifthHeart.classList.add('heart');
 thirdDisplay.appendChild(fifthHeart);
 
-// Function will add .fade class to each heart depending if the lower number has the class.
-function addFade() {
-    switch(playerPoints) {
-        case 4:
-            fifthHeart.classList.add('fade');
-            break;
-        case 3:
-            fourthHeart.classList.add('fade');
-            break;
-        case 2:
-            thirdHeart.classList.add('fade');
-            break;
-        case 1:
-            secondHeart.classList.add('fade');
-            break;
-        case 0:
-            firstHeart.classList.add('fade');
-            break;
-    }
-}
+console.log("Round 1!")
 
-// Resets the game
-function reset() {
-    removeFade();
-    buttonContainer.removeChild(restart);
-    secondPara.innerText = 'New game!';
-    playerPoints = 5;
-    computerPoints = 5;
-    round = 1;
-}
-
-// function to remove class 'fade' from hearts.
-function removeFade() {
-    firstHeart.classList.remove('fade');
-    secondHeart.classList.remove('fade');
-    thirdHeart.classList.remove('fade');
-    fourthHeart.classList.remove('fade');
-    fifthHeart.classList.remove('fade');
-}
-
-let para = document.createElement('p');
-para.setAttribute('id','displayPara');
-display.appendChild(para);
-
-let secondPara = document.createElement('p');
-secondPara.setAttribute('class', 'typeText')
-secondDisplay.appendChild(secondPara);
-
+/*
+==========
+Functions
+=========
+*/
 
 let i = 0;
 
@@ -105,34 +92,25 @@ function typeWriter() {
     }
 }
 
-console.log("Round 1!")
+/* The following functions will return the choice of the
+   button pressed and also callback the playRound function
+   so that the computer choice is also determined each time
+   the button is clicked, and a result is determined.
+*/
 
-function decideWinner() {
-    if (computerPoints === 0) {
-        text = 'Congratulations! You won!';
-    } else if (playerPoints === 0) {
-        text = 'You lose!... Try again?';
-        restartGame();
-        //Maybe I'll add an if...else statement based on the
-        //player's decision to continue or quit if they lose.
-    } else {
-        text = 'Tie-breaker!';
-    }
+function chooseRock() {
+    userChoice = 'Rock';
+    playRound(userChoice);
 }
 
-function restartGame() {
-    restart.setAttribute('class', 'fadeIn');
-    buttonContainer.appendChild(restart);
+function choosePaper() {
+    userChoice = 'Paper';
+    playRound(userChoice);
 }
 
-function announceRound() {
-    if (playerPoints !== 0 && computerPoints !== 0) {
-        text = `Round ${round}! `
-        typeWriter(text);
-    } else {
-        decideWinner();
-        typeWriter(text);
-    }
+function chooseScissors() {
+    userChoice = 'Scissors';
+    playRound(userChoice);
 }
 
 function playRound(userChoice) {
@@ -180,41 +158,70 @@ function playRound(userChoice) {
     //console.log(round);
 }
 
-let rock = document.querySelector('#rock');
-rock.addEventListener('click', chooseRock);
-
-let paper = document.querySelector('#paper');
-paper.addEventListener('click', choosePaper);
-
-let scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', chooseScissors);
-
-/* The following functions will return the choice of the
-   button pressed and also callback the playRound function
-   so that the computer choice is also determined each time
-   the button is clicked, and a result is determined.
-*/
-
-function chooseRock() {
-    userChoice = 'Rock';
-    playRound(userChoice);
+function announceRound() {
+    if (playerPoints !== 0 && computerPoints !== 0) {
+        text = `Round ${round}! `
+        typeWriter(text);
+    } else {
+        decideWinner();
+        typeWriter(text);
+    }
 }
 
-function choosePaper() {
-    userChoice = 'Paper';
-    playRound(userChoice);
+function decideWinner() {
+    if (computerPoints === 0) {
+        text = 'Congratulations! You won!';
+    } else if (playerPoints === 0) {
+        text = 'You lose!... Try again?';
+        restartGame();
+        //Maybe I'll add an if...else statement based on the
+        //player's decision to continue or quit if they lose.
+    } else {
+        text = 'Tie-breaker!';
+    }
 }
 
-function chooseScissors() {
-    userChoice = 'Scissors';
-    playRound(userChoice);
+function restartGame() {
+    restart.setAttribute('class', 'fadeIn');
+    buttonContainer.appendChild(restart);
 }
 
-//User and Computer Points Variables 
-let playerPoints = 5;
+// Resets the game
+function reset() {
+    removeFade();
+    buttonContainer.removeChild(restart);
+    secondPara.innerText = 'New game!';
+    playerPoints = 5;
+    computerPoints = 5;
+    round = 1;
+}
 
-let computerPoints = 5;
+// Function will add .fade class to each heart depending if the lower number has the class.
+function addFade() {
+    switch(playerPoints) {
+        case 4:
+            fifthHeart.classList.add('fade');
+            break;
+        case 3:
+            fourthHeart.classList.add('fade');
+            break;
+        case 2:
+            thirdHeart.classList.add('fade');
+            break;
+        case 1:
+            secondHeart.classList.add('fade');
+            break;
+        case 0:
+            firstHeart.classList.add('fade');
+            break;
+    }
+}
 
-let round = 1;
-
-// testing !
+// function to remove class 'fade' from hearts.
+function removeFade() {
+    firstHeart.classList.remove('fade');
+    secondHeart.classList.remove('fade');
+    thirdHeart.classList.remove('fade');
+    fourthHeart.classList.remove('fade');
+    fifthHeart.classList.remove('fade');
+}
