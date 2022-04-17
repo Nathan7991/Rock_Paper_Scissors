@@ -25,8 +25,6 @@ let secondPara = document.createElement('p');
 secondPara.setAttribute('class', 'typeText')
 secondDisplay.appendChild(secondPara);
 
-let text; // Will hold the text for displayer.
-
 let restart = document.createElement('button');
 restart.innerText = "Try again";
 restart.setAttribute('id', 'restart');
@@ -81,6 +79,8 @@ Functions
 let i = 0;
 
 let speed = 60; //speed in of the typewriter effect in ms.
+
+let text; // Will hold the text for displayer.
 
 function typeWriter() {
     if (i < text.length) {
