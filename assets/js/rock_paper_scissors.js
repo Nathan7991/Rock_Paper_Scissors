@@ -75,11 +75,8 @@ function decideWinner() {
 }
 
 function announceRound() {
-    if (round < 5) {
+    if (playerPoints !== 0 && computerPoints !== 0) {
         text = `Round ${round}! `
-        typeWriter(text);
-    } else if (round === 5) {
-        text = 'Final round! '
         typeWriter(text);
     } else {
         decideWinner();
