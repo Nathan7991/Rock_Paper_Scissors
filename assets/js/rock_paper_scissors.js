@@ -7,6 +7,7 @@ const display = document.querySelector('#outputDisplay');
 const secondDisplay = document.querySelector('#secondOutputDisplay');
 
 let restart = document.createElement('button');
+restart.innerText = "Try again";
 restart.setAttribute('id', 'restart');
 
 // Display container and img nodes for the player's amount of lives.
@@ -89,6 +90,7 @@ function decideWinner() {
         text = 'Congratulations! You won!';
     } else if (playerPoints === 0) {
         text = 'You lose!... Try again?';
+        restartGame();
         //Maybe I'll add an if...else statement based on the
         //player's decision to continue or quit if they lose.
     } else {
@@ -97,6 +99,7 @@ function decideWinner() {
 }
 
 function restartGame() {
+    restart.setAttribute('class', 'fadeIn');
     secondDisplay.appendChild(restart);
 }
 

@@ -57,6 +57,32 @@ html * {
     font-family: 'Press Start 2P', cursive;
 }
 
+/*
+#restart {
+
+}
+*/
+
+.fadeIn {
+	animation-name: fadeIn;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}	
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 #display {
     width: 500px;
     height: 500px;
