@@ -124,6 +124,7 @@ Hearts and Animation
 	flex: 1;
 	width: 75px;
 	height: 75x;
+	border-radius: 100px;
 }
 
 .fade {
