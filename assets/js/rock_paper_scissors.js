@@ -13,6 +13,9 @@ let round = 1;
 const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
+let startText = document.createElement('p');
+startText.textContent = "You are humanity's last hope. Defeat the computer and save the world. Round 1 begins now..."
+secondDisplay.appendChild(startText);
 
 const buttonContainer = document.querySelector('#buttonContainer');
 
@@ -95,6 +98,13 @@ function typeWriter() {
 //To be called in the announceRound() function in order to get rid of text.
 function removeTextContent() {
     document.getElementById('displayPara').textContent = '';
+}
+
+//Will remove startText node from secondDisplay
+function removeStartText() {
+    if (secondDisplay.hasChildNodes()) {
+        secondDisplay.removeChild(startText);
+    }
 }
 
 
