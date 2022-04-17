@@ -190,6 +190,7 @@ function restartGame() {
 function reset() {
     removeFade();
     buttonContainer.removeChild(restart);
+    document.getElementById('displayPara').textContent = '';
     secondPara.innerText = 'New game!';
     playerPoints = 5;
     computerPoints = 5;
