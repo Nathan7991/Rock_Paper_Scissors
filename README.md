@@ -5,4 +5,4 @@ Credit give to:
 
 Eric. A and Kathryn S. Meyer for the CSS reset, from https://meyerweb.com/eric/tools/css/reset/.
 
-My loving girlfriend, Janine R. Carino, for the following amazing sun and moon png files.
+My loving girlfriend, Janine R. Cariño, for the following amazing sun and moon png files.
