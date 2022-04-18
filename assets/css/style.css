@@ -190,7 +190,7 @@ header {
 	height: 200px;
 	border: solid rgb(200, 100, 20) 2px;
 	flex: 6;
-	gap: 10px;
+	gap: 25px;
 }
 
 #thirdOutputDisplay {

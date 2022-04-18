@@ -23,8 +23,6 @@ let startText = document.createElement('p');
 startText.textContent = (userName === '' || userName === null) ?  `You are humanity's last hope. Defeat the computer and save the world. Round 1 begins now!` : `${userName}, you are humanity's last hope. Defeat the computer and save the world. Round 1 begins now!`;
 secondDisplay.appendChild(startText);
 
-const buttonContainer = document.querySelector('#buttonContainer');
-
 //Paragraph variables
 let para = document.createElement('p');
 para.setAttribute('id','displayPara');
@@ -33,6 +31,10 @@ display.appendChild(para);
 let secondPara = document.createElement('p');
 secondPara.setAttribute('class', 'typeText')
 secondDisplay.appendChild(secondPara);
+
+let buttonContainer = document.createElement('div');
+buttonContainer.setAttribute('id', 'buttonContainer');
+secondDisplay.appendChild(buttonContainer);
 
 let restart = document.createElement('button');
 restart.innerText = "Try again";
