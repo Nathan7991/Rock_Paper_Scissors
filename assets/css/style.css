@@ -57,11 +57,9 @@ html * {
     font-family: 'Press Start 2P', cursive;
 }
 
-/*
-#restart {
-
+h1 {
+	text-shadow: 2px 2px #fff;
 }
-*/
 
 .fadeIn {
 	animation-name: fadeIn;
@@ -95,6 +93,15 @@ html * {
 #displayPara {
 	align-self: center;
     margin: 10px;
+	text-shadow: 2px 2px #afafaf;
+}
+
+.typeTextTwo {
+	text-shadow: 2px 2px #ffffff;
+}
+
+.typeText {
+	text-shadow: 2px 2px #ffffff;
 }
 
 .typeText::after {
@@ -118,6 +125,10 @@ html * {
 
 .button-style:hover {
 	cursor: pointer;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #92ba92;
+    border: none;
 }
 /*
 ====================
@@ -153,6 +164,7 @@ Containers
 */
 
 body {
+	background: #e0dbcd;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,9 +190,13 @@ header {
 	border-bottom: solid 2px;
 	flex: 1;
 	display: flex;
+	border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+	background: #fff;
 }
 
 #secondOutputDisplay {
+	background-color: #92BA92;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -196,6 +212,9 @@ header {
 	display: flex;
 	border-top: 2px solid;
 	flex: 2;
+	background: #fff;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 #buttonContainer {

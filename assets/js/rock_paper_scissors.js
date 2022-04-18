@@ -20,6 +20,7 @@ const display = document.querySelector('#outputDisplay');
 
 const secondDisplay = document.querySelector('#secondOutputDisplay');
 let startText = document.createElement('p');
+startText.classList.add('typeTextTwo');
 startText.textContent = (userName === '' || userName === null) ?  `You are humanity's last hope. Defeat the computer and save the world. Round 1 begins now!` : `${userName}, you are humanity's last hope. Defeat the computer and save the world. Round 1 begins now!`;
 secondDisplay.appendChild(startText);
 
