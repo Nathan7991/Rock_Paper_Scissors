@@ -215,7 +215,7 @@ function decideWinner() {
 }
 
 function restartGame() {
-    restart.setAttribute('class', 'fadeIn');
+    restart.classList.add('fadeIn', 'button-style');
     buttonContainer.appendChild(restart);
 }
 
